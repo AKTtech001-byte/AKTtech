@@ -52,6 +52,7 @@ header a{
     margin-bottom: 20px;
      color: #ecf1f8;
      white-space: nowrap;
+     max-width:600px;
 }
 .welcome-text{
     font-size: 60px;
