@@ -377,12 +377,14 @@ header a {
 
 @media (max-width: 600px) {
     header {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 12px 15px;
     }
 
     header a {
-        margin: 0 10px;
+        margin-left: 12px;
+        font-size: 14px;
     }
 
     .services {
