@@ -13,6 +13,7 @@
    }
    body{
    background-color: #ffffff;
+   padding: 10px;
    }
 header{
     display: flex;
@@ -32,14 +33,14 @@ header a{
 }
 
 .yyy{
+    margin: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-     margin: 0;
-    margin-top: 40px;
-    padding: 40px 20px;
+    height: 70vh;
+    margin-top: -60px;
 }
 .yyy h2{
     /* font-size: 20px; */
@@ -52,7 +53,6 @@ header a{
     margin-bottom: 20px;
      color: #ecf1f8;
      white-space: nowrap;
-     max-width:600px;
 }
 .welcome-text{
     font-size: 60px;
@@ -206,14 +206,14 @@ html {
 }
 
 /* TABLET */
-@media (max-width: 900px) {
-    .services-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+/* @media (max-width: 900px) { */
+    /* .services-container { */
+        /* grid-template-columns: repeat(2, 1fr); */
+    /* } */
+/* } */
 
 /* MOBILE */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .services {
         padding: 60px 5%;
     }
