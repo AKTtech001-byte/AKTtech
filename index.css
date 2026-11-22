@@ -1,67 +1,83 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
-.top-section{
-    background: linear-gradient(to bottom, #03142c, #051942, #0c376d); 
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+.top-section {
+    background: linear-gradient(to bottom, #03142c, #051942, #0c376d);
     min-height: 100vh;
-    margin: 0;
-   }
-   body{
-   background-color: #ffffff;
-   padding: 10px;
-   }
-header{
+    min-height: 100dvh; /* accounts for mobile browser address bars */
+}
+
+body {
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px clamp(15px, 4vw, 30px);
     color: white;
 }
-header h1{
-    font-size: 24px;
+
+header h1 {
+    font-size: clamp(18px, 4vw, 24px);
 }
-header a{
+
+header a {
     color: #ffffff;
     text-decoration: none;
     margin-left: 20px;
     font-size: 16px;
 }
 
-.yyy{
-    margin: 85vh;
+.yyy {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 70vh;
-    margin-top: -60px;
-}
-.yyy h2{
-    /* font-size: 20px; */
-    margin-top: 10px;
-    color: #f3f4f7;
+    min-height: 70vh;
+    padding: 0 20px;
+    margin: 0; /* was margin: 85vh */
 }
 
-.yyy p{
-    font-size: 30px;
+.yyy h2 {
+    margin-top: 10px;
+    color: #f3f4f7;
+    font-size: clamp(16px, 3vw, 22px);
+}
+
+.yyy p {
+    font-size: clamp(18px, 4vw, 30px);
     margin-bottom: 20px;
-     color: #ecf1f8;
-     white-space: nowrap;
+    color: #ecf1f8;
 }
-.welcome-text{
-    font-size: 60px;
+
+.welcome-text {
+    font-size: clamp(32px, 8vw, 60px);
     font-weight: bold;
-    white-space: nowrap;
 }
+
 .welcome-text:hover {
     color: #2563eb;
 }
+
 .explore-btn {
     display: inline-block;
     background: #2563eb;
@@ -79,26 +95,27 @@ header a{
     transform: translateY(-3px);
 }
 
-html {
-    scroll-behavior: smooth;
-}
-.hero{
-    height: 80vh;
+.hero {
+    min-height: 80vh; /* was height */
+    padding: 20px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-   align-items: center;
+    align-items: center;
     color: white;
 }
 
-.hero h1{
-    font-size: 42px;
+.hero h1 {
+    font-size: clamp(28px, 6vw, 42px);
     margin-bottom: 10px;
 }
-.hero p{
+
+.hero p {
     margin-bottom: 20px;
     color: #e2e8f0;
 }
+
 .hero button {
     background: #f59e0b;
     color: white;
@@ -108,28 +125,29 @@ html {
     border-radius: 2px;
 }
 
-.white-section{
-    /* background: rgb(2, 53, 25); */
+.white-section {
     width: 100%;
     min-height: 100vh;
     padding-top: 30px;
     margin-top: -20px;
     border-radius: 20px 20px 0 0;
 }
- .white-section p{
-    font-size: 20px;
- }
-.about{
+
+.white-section p {
+    font-size: clamp(16px, 2.5vw, 20px);
+}
+
+.about {
     text-align: center;
     padding: 20px;
     margin-bottom: 30px;
 }
 
-.about p{
-     font-weight: bold;
-     font-style: italic;
+.about p {
+    font-weight: bold;
+    font-style: italic;
     color: #000000;
-    font-size: 25px;
+    font-size: clamp(18px, 3vw, 25px);
     margin-top: 5px;
 }
 
@@ -137,7 +155,7 @@ html {
 /* OUR SERVICES SECTION */
 
 .services {
-    padding: 80px 8%;
+    padding: 80px clamp(16px, 8%, 80px);
     background: #f4f8ff;
     font-family: Arial, sans-serif;
 }
@@ -156,7 +174,7 @@ html {
 }
 
 .services-header h2 {
-    font-size: 38px;
+    font-size: clamp(28px, 5vw, 38px);
     color: #142c56;
     margin: 12px 0;
 }
@@ -167,9 +185,11 @@ html {
     font-size: 16px;
 }
 
+/* auto-fit adjusts the number of columns by itself,
+   so the old tablet/mobile grid media queries are no longer needed */
 .services-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
 }
 
@@ -205,32 +225,13 @@ html {
     line-height: 1.8;
 }
 
-/* TABLET */
-/* @media (max-width: 900px) { */
-    /* .services-container { */
-        /* grid-template-columns: repeat(2, 1fr); */
-    /* } */
-/* } */
-
-/* MOBILE */
-@media (max-width: 400px) {
-    .services {
-        padding: 60px 5%;
-    }
-
-    .services-container {
-        grid-template-columns: 1fr;
-    }
-
-    .services-header h2 {
-        font-size: 30px;
-    }
-}
-.timi p{
+.timi p {
     font-size: 19px;
     color: black;
 }
 
+
+/* REGISTER SECTION */
 
 .register-section {
     padding: 70px 20px;
@@ -254,7 +255,7 @@ html {
     background: white;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 #registerForm input,
@@ -286,8 +287,7 @@ html {
     color: #16a34a;
     margin-top: 15px;
 }
-.services,.register-section{
-    flex-direction:column}
+
 
 /* PREMIUMPLUS PROFESSIONAL FOOTER */
 
@@ -348,7 +348,7 @@ html {
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
     padding-top: 20px;
     display: flex;
     justify-content: space-between;
@@ -362,10 +362,9 @@ html {
 }
 
 
-/* MOBILE RESPONSIVENESS */
+/* RESPONSIVE BREAKPOINTS */
 
 @media (max-width: 768px) {
-
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
@@ -374,17 +373,38 @@ html {
     .footer-brand {
         grid-column: 1 / -1;
     }
+}
 
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header a {
+        margin: 0 10px;
+    }
+
+    .services {
+        padding: 60px 5%;
+    }
+
+    .register-section h2 {
+        font-size: 26px;
+    }
+
+    #registerForm {
+        padding: 20px;
+    }
 }
 
 @media (max-width: 450px) {
-
     .main-footer {
         padding: 45px 6% 20px;
     }
 
     .footer-content {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr; /* was 1fr 1fr */
         gap: 25px 15px;
     }
 
@@ -392,5 +412,4 @@ html {
         flex-direction: column;
         text-align: center;
     }
-
 }
