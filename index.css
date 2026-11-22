@@ -213,7 +213,7 @@ html {
 /* } */
 
 /* MOBILE */
-@media (max-width: 768vh) {
+@media (max-width: 768px) {
     .services {
         padding: 60px 5%;
     }
@@ -286,6 +286,8 @@ html {
     color: #16a34a;
     margin-top: 15px;
 }
+.services,.register-section{
+    flex-direction:column}
 
 /* PREMIUMPLUS PROFESSIONAL FOOTER */
 
